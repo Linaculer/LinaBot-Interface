@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E58DAC36-A3F2-4623-9531-AB6B5623991E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>RetroBot.My.MyApplication</StartupObject>
+    <RootNamespace>RetroBot</RootNamespace>
+    <AssemblyName>RetroBot</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>RetroBot.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>RetroBot.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\ezgif-4-1aea7c1ed603.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\LinaBot\LinaBot\bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="ProxySocket, Version=1.1.2.0, Culture=neutral, PublicKeyToken=966874d7118d1436, processorArchitecture=MSIL">
+      <HintPath>..\packages\ProxySocket.1.1.2\lib\net40\ProxySocket.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpZipLib">
+      <HintPath>..\..\LinaBot\LinaBot\bin\Debug\SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="SwfDotNet.IO">
+      <HintPath>..\..\LinaBot\LinaBot\bin\Debug\SwfDotNet.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ami\AmiInformation.vb" />
+    <Compile Include="Ami\FunctionAmi.vb" />
+    <Compile Include="Caracteristique\FunctionCaractéristique.vb" />
+    <Compile Include="Caracteristique\MdlCaractéristique.vb" />
+    <Compile Include="Combat\FunctionCombat.vb" />
+    <Compile Include="Combat\MdlCombat.vb" />
+    <Compile Include="Connexion\FunctionConnexion.vb" />
+    <Compile Include="Connexion\MdlConnexion.vb" />
+    <Compile Include="Defi\FunctionDefi.vb" />
+    <Compile Include="Defi\mdlDefi.vb" />
+    <Compile Include="Divers\AllClass.vb" />
+    <Compile Include="Divers\Chargement.vb" />
+    <Compile Include="Divers\Divers.vb" />
+    <Compile Include="Divers\OptionPersonnage.vb" />
+    <Compile Include="Divers\Variable.vb" />
+    <Compile Include="Dragodinde\FunctionDragodinde.vb" />
+    <Compile Include="Dragodinde\mdlDragodinde.vb" />
+    <Compile Include="Echange\FunctionEchange.vb" />
+    <Compile Include="Echange\mdlEchange.vb" />
+    <Compile Include="Elevage\Familier\FunctionFamilier.vb" />
+    <Compile Include="Enclos\MdlEnclo.vb" />
+    <Compile Include="Form\Control\ProgressBarText.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form\FrmGroupe.Designer.vb">
+      <DependentUpon>FrmGroupe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmGroupe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Gestion Compte\GestionComptes.Designer.vb">
+      <DependentUpon>GestionComptes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Gestion Compte\GestionComptes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\LinaBot.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\LinaBot.Designer.vb">
+      <DependentUpon>LinaBot.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\UcBot.Designer.vb">
+      <DependentUpon>UcBot.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\UcBot.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gestion\Gestion.vb" />
+    <Compile Include="Groupe\FunctionGroupe.vb" />
+    <Compile Include="Groupe\mdlGroupe.vb" />
+    <Compile Include="Guilde\FunctionGuilde.vb" />
+    <Compile Include="Guilde\mdlGuilde.vb" />
+    <Compile Include="IA\Avancer_Reculer.vb" />
+    <Compile Include="IA\IntelligenceArtificielle.vb" />
+    <Compile Include="IA\LancerUnSort.vb" />
+    <Compile Include="Interaction\FunctionInteraction.vb" />
+    <Compile Include="Interaction\MdlInteraction.vb" />
+    <Compile Include="Inventaire\mdlInventaire.vb" />
+    <Compile Include="Item\FunctionItem.vb" />
+    <Compile Include="Item\MdlItem.vb" />
+    <Compile Include="Maison\FunctionMaison.vb" />
+    <Compile Include="Maison\MdlMaison.vb" />
+    <Compile Include="Map\Fonctions.vb" />
+    <Compile Include="Map\FunctionMap.vb" />
+    <Compile Include="Map\Maphandler.vb" />
+    <Compile Include="Map\Map_Data.vb" />
+    <Compile Include="Map\Pathfinding.vb" />
+    <Compile Include="Map\SwfUnpacker.vb" />
+    <Compile Include="Metier\FunctionMetier.vb" />
+    <Compile Include="Metier\MdlMétier.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Player\ElgSocketEventArgs.vb" />
+    <Compile Include="Player\Player.vb" />
+    <Compile Include="Player\PlayerVariable.vb" />
+    <Compile Include="Pnj\FunctionPnj.vb" />
+    <Compile Include="Pnj\mdlPnj.vb" />
+    <Compile Include="Recolte\FunctionRecolte.vb" />
+    <Compile Include="Recolte\mdlRecolte.vb" />
+    <Compile Include="Sort\FunctionSort.vb" />
+    <Compile Include="Sort\MdlSort.vb" />
+    <Compile Include="Tchat\MdlCanal.vb" />
+    <Compile Include="Tchat\Tchat.vb" />
+    <Compile Include="Trajet\Trajet Lina.vb" />
+    <Compile Include="Trajet\TrajetExecution.vb" />
+    <Compile Include="Trajet\TrajetGroupe.vb" />
+    <Compile Include="Zaap\FunctionZaap.vb" />
+    <Compile Include="Zaap\Module_Zaap.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form\FrmGroupe.resx">
+      <DependentUpon>FrmGroupe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Gestion Compte\GestionComptes.resx">
+      <DependentUpon>GestionComptes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\LinaBot.resx">
+      <DependentUpon>LinaBot.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\UcBot.resx">
+      <DependentUpon>UcBot.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ezgif-4-1aea7c1ed603.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parchemin Off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parchemin On.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Divers\Connecter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Divers\Deconnecter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Divers\Envoyer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Agiliter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Chance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Coups Critiques.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Dommage Pc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Dommage Piege Pc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Dommage Piege.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Dommage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Force.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Initiative.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Intelligence.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Invocation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Neutre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\PA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\PM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\PO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Prospection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Resistance Air.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Resistance Eau.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Resistance Feu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Resistance Neutre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Resistance Terre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Sagesse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Soin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Vitaliter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Divers\moins.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Divers\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Divers\Kamas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Divers\Energie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Divers\Inventaire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Divers\Power.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Divers\Equiper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Divers\Potion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Divers\Poubelle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Divers\Combat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Aide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Cadenas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Resistance Air PC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Resistance Eau PC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Resistance Feu PC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Resistance Neutre PC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Resistance Terre PC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Caracteristique\Spectateur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Divers\Enregistrer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Divers\Ampoule Off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Image\Divers\Ampoule On.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
